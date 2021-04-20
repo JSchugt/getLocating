@@ -1,9 +1,12 @@
+import {openCageKey} from "./settings.js"
+
+
 let out = {}
 const message = document.querySelector('#message');
 const btn = document.querySelector('#show');
 const successfulLookup = position => {
     const { latitude, longitude } = position.coords;
-    return fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=758dfe53035e47849a3b369f1110df2c`)
+    return fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${openCageKey}`)
         .then(response => response.json())
         .then(console.log, "line 8")
         .then(res => out=res);
