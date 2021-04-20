@@ -4,6 +4,7 @@ import {openCageKey} from "./settings.js"
 let out = {}
 const message = document.querySelector('#message');
 const btn = document.querySelector('#show');
+// opencage api key needs for address
 const successfulLookup = position => {
     const { latitude, longitude } = position.coords;
     return fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${openCageKey}`)
